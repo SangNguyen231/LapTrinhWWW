@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+	 <Resource name="jdbc/qlspDB" auth="Container"
+	            type="javax.sql.DataSource" username="sa" password="12345678"
+	            driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+	            url="jdbc:sqlserver://localhost;DatabaseName=QLSP;SelectMethod=cursor;"
+	            />
+ </Context>
