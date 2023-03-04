@@ -31,9 +31,9 @@ public class Serverlet extends HttpServlet {
 
 	private static final int BUFFER_SIZE = 4096;
 	private static final String SAVE_DIR = "images";
-	private String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=UploadFileServletDB;encrypt=true;trustServerCertificate=true";
+	private String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=Tuan03;encrypt=true;trustServerCertificate=true";
 	private String dbUser = "sa";
-	private String dbPass = "sapassword";
+	private String dbPass = "123456";
 
 	private static final long serialVersionUID = 1L;
 

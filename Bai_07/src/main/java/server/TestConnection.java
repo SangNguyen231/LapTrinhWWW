@@ -13,9 +13,9 @@ public class TestConnection {
 		 
         try {
  
-            String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=UploadFileServletDB";
+            String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=Tuan03";
             String user = "sa";
-            String pass = "sapassword";
+            String pass = "123456";
             conn = DriverManager.getConnection(dbURL, user, pass);
             if (conn != null) {
                 DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
