@@ -23,16 +23,10 @@ public class Product implements Serializable {
 	private String productName;
 	@Column(nullable = false, unique = true, length = 150)
 	private String description;
-	@ManyToOne
-	@JoinTable(name = "Manufacturer")
-	private Manufacturer manId;
 
-	public Product(int productId, String productName, String description, Manufacturer manId) {
-		super();
-		this.productId = productId;
+	public Product( String productName, String description) {
 		this.productName = productName;
 		this.description = description;
-		this.manId = manId;
 	}
 
 	public Product() {
@@ -64,13 +58,6 @@ public class Product implements Serializable {
 		this.description = description;
 	}
 
-	public Manufacturer getManId() {
-		return manId;
-	}
-
-	public void setManId(Manufacturer manId) {
-		this.manId = manId;
-	}
 
 	@Override
 	public int hashCode() {
@@ -92,7 +79,7 @@ public class Product implements Serializable {
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", description=" + description
-				+ ", manId=" + manId + "]";
+				+ "]";
 	}
 
 }

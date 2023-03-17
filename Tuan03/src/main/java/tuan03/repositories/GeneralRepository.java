@@ -15,7 +15,7 @@ public class GeneralRepository<T, ID> {
 
     public GeneralRepository(String entityName) {
         this.entityName = entityName;
-        entityManager = Persistence.createEntityManagerFactory("hsql").createEntityManager();
+        entityManager = Persistence.createEntityManagerFactory("aplicacion").createEntityManager();
     }
 
     public T save(T entity) {
