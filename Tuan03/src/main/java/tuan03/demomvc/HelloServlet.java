@@ -1,6 +1,7 @@
 package tuan03.demomvc;
 
 import java.io.*;
+import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,11 +48,19 @@ public class HelloServlet extends HttpServlet {
 //        service.save(manufacturer4);
 
           Product product = new Product("Product", "Demo");
+          Product product1 = new Product("Product1", "Demo1");
+          Product product2 = new Product("Product2", "Demo2");
+          Product product3 = new Product("Product3", "Demo3");
           ProductService productService = new ProductService();
           productService.save(product);
+          productService.save(product1);
+          productService.save(product2);
+          productService.save(product3);
+        
+        List<Product> lst = productService.findAll();
         
         out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
+        out.println("<h1>" + lst + "</h1>");
         out.println("</body></html>");
     }
 

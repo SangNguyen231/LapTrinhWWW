@@ -18,7 +18,7 @@ public class Product implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int productId;
+	private long productId;
 	@Column(nullable = false, unique = true, length = 150)
 	private String productName;
 	@Column(nullable = false, unique = true, length = 150)
@@ -34,12 +34,12 @@ public class Product implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getProductId() {
+	public long getProductId() {
 		return productId;
 	}
 
-	public void setProductId(int productId) {
-		this.productId = productId;
+	public void setProductId(long l) {
+		this.productId = l;
 	}
 
 	public String getProductName() {

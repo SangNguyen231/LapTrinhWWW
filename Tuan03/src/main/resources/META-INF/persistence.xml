@@ -7,6 +7,7 @@
 	<persistence-unit name="aplicacion"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>tuan03.entities.Product</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
@@ -18,14 +19,8 @@
 				value="123456" />
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.SQLServerDialect" />
-			<property name="hibernate.show_sql" value="true" />
-			<property name="javax.persistence.schema-generation.database.action"
-                    value="drop-and-create"/>
             <property name="hibernate.format_sql" value="true"/>
-            <property name ="hibernate.show_sql" value = "true" />
-            <property name="hibernate.use_sql_comments" value="true"/>
-            <property name="org.hibernate.SQL" value="debug"/>
-            <property name="org.hibernate.type.descriptor.sql.BasicBinder" value="debug"/>
+			<property name="hibernate.show_sql" value="true" />
 		</properties>
 	</persistence-unit>
 </persistence>

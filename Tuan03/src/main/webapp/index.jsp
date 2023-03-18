@@ -5,10 +5,10 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Demo CRUP Prodcuts" %>
 </h1>
 <a href="hello-servlet">Kick me</a>
 <br/>
-<a href="Controller?action=list_users">User Management</a>
+<a href="controller?action=list_products">Product List</a>
 </body>
 </html>
