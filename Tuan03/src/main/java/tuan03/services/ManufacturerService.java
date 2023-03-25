@@ -24,8 +24,8 @@ public class ManufacturerService {
 //        return gRepository.findById(Manufacturerid);
 //    }
 
-	public Manufacturer findById(Manufacturer Manufacturer, long Manufacturerid) {
-		return gRepository.findByEntity(Manufacturer, Manufacturerid);
+	public Manufacturer findById(Manufacturer manufacturer, long Manufacturerid) {
+		return gRepository.findByEntity(manufacturer, Manufacturerid);
 	}
 
 	public Manufacturer updateManufacturer(Manufacturer Manufacturer) {

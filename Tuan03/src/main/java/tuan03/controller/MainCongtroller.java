@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import tuan03.entities.Manufacturer;
 import tuan03.entities.Product;
+import tuan03.services.ManufacturerService;
 import tuan03.services.ProductService;
 
 
@@ -26,6 +28,7 @@ public class MainCongtroller extends HttpServlet{
 		// TODO Auto-generated method stub
 		String action = request.getParameter("action");
 		ProductService productService = new ProductService();
+		ManufacturerService manufacturerService = new ManufacturerService();
 		HttpSession session = request.getSession(true);
 		
 		switch (action) {
@@ -40,7 +43,10 @@ public class MainCongtroller extends HttpServlet{
 		case "add_product":
             String prodcutName = request.getParameter("productname");
             String description = request.getParameter("description");
-            Product product = new Product(prodcutName, description);
+            String manufactuerid = request.getParameter("manufactuerid");
+            Manufacturer manufacturer = new Manufacturer();
+            manufacturer = manufacturerService.findById(manufacturer, Long.parseLong(manufactuerid));
+            Product product = new Product(prodcutName, description, manufacturer);
             productService.save(product);
             response.sendRedirect("controller?action=list_products");
             break;
@@ -54,7 +60,10 @@ public class MainCongtroller extends HttpServlet{
 			productid = request.getParameter("productid");
 			prodcutName = request.getParameter("productname");
 			description = request.getParameter("description");
-			Product product1 = new Product(prodcutName, description);
+			manufactuerid = request.getParameter("manufactuerid");
+            manufacturer = new Manufacturer();
+            manufacturer = manufacturerService.findById(manufacturer, Long.parseLong(manufactuerid));
+			Product product1 = new Product(prodcutName, description, manufacturer);
 			product1.setProductId( Long.parseLong(productid));
 			productService.updateProduct(product1);
             response.sendRedirect("controller?action=list_products");

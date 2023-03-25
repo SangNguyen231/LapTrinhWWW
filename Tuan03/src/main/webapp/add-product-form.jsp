@@ -11,6 +11,7 @@
 		<input type="hidden" name="action" value="add_product" /> 
 		Enter Product Name:<input name="productname" maxlength="50" /><br /> 
 		Enter Description:<input name="description" maxlength="50" /><br />
+		Enter ManufactuerId:<input name="manufactuerid" maxlength="50"/>
 		<input type="hidden" name="state" value="disable"/> 
 		<input type="submit" value="Save" />
 	</form>

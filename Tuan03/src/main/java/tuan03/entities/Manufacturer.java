@@ -20,7 +20,7 @@ public class Manufacturer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int manId;
+	private long manId;
 	@Column(nullable = false, unique = true, length = 150)
 	private String manName;
 	@Column(nullable = false, unique = true, length = 150)
@@ -31,7 +31,8 @@ public class Manufacturer {
 	private String manContactPhone;
 	@Column(nullable = false, unique = true, length = 150)
 	private String manWebsite;
-	@OneToMany(cascade = CascadeType.ALL)
+	
+	@OneToMany(mappedBy="manufactuer")
 	private List<Product> products;
 
 	public Manufacturer() {
@@ -40,21 +41,20 @@ public class Manufacturer {
 	}
 
 	public Manufacturer(String manName, String manContactName, String manContactEmail,
-			String manContactPhone, String manWebsite, List<Product> products) {
+			String manContactPhone, String manWebsite) {
 		super();
 		this.manName = manName;
 		this.manContactName = manContactName;
 		this.manContactEmail = manContactEmail;
 		this.manContactPhone = manContactPhone;
 		this.manWebsite = manWebsite;
-		this.products = products;
 	}
 
-	public int getManId() {
+	public long getManId() {
 		return manId;
 	}
 
-	public void setManId(int manId) {
+	public void setManId(long manId) {
 		this.manId = manId;
 	}
 

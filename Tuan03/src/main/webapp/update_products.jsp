@@ -24,6 +24,7 @@
 			maxlength="50" value="<%=selProduct.getProductName()%>" /><br />
 		Enter description:<input name="description" maxlength="50"
 			value="<%=selProduct.getDescription()%>" /><br /> <br /> 
+		Enter ManufactuerId:<input name="manufactuerid" maxlength="50" value="<%=selProduct.getManufactuer().getManId()%>"/>
 		<select
 			name="state">
 			<option value="disable">disable</option>

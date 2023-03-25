@@ -18,6 +18,7 @@
 			<th>ID</th>
 			<th>Product Name</th>
 			<th>Description</th>
+			<th>Manufacturer ID</th>
 			<th><a href="controller?action=add_new_product">Add New Product</a></th>
 		</tr>
 		<%
@@ -27,6 +28,7 @@
 			<td><%=product.getProductId()%></td>
 			<td><%=product.getProductName()%></td>
 			<td><%=product.getDescription()%></td>
+			<td><%=product.getManufactuer().getManName()%></td>
 			<td><a
 				href="controller?action=update_product_view&id=<%=product.getProductId()%>">Edit
 			</a> <a href=""

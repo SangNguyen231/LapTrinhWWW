@@ -36,28 +36,35 @@ public class HelloServlet extends HttpServlet {
 //        userService.save(pd2);
 //        userService.save(pd3);
         
-//        Manufacturer manufacturer1 = new Manufacturer("demo1", "demo1", "demo1", "demo1", "demo1", null);
-//        Manufacturer manufacturer2 = new Manufacturer("demo2", "demo2", "demo2", "demo2", "demo2", null);
-//        Manufacturer manufacturer3 = new Manufacturer("demo3", "demo3", "demo3", "demo3", "demo3", null);
-//        Manufacturer manufacturer4 = new Manufacturer("demo4", "demo4", "demo4", "demo4", "demo4", null);
-//        
-//        ManufacturerService service = new ManufacturerService();;
-//        service.save(manufacturer1);
-//        service.save(manufacturer2);
-//        service.save(manufacturer3);
-//        service.save(manufacturer4);
-
-          Product product = new Product("Product", "Demo");
-          Product product1 = new Product("Product1", "Demo1");
-          Product product2 = new Product("Product2", "Demo2");
-          Product product3 = new Product("Product3", "Demo3");
-          ProductService productService = new ProductService();
-          productService.save(product);
-          productService.save(product1);
-          productService.save(product2);
-          productService.save(product3);
+        Manufacturer manufacturer1 = new Manufacturer("demo1", "demo1", "demo1", "demo1", "demo1");
+        Manufacturer manufacturer2 = new Manufacturer("demo2", "demo2", "demo2", "demo2", "demo2");
+        Manufacturer manufacturer3 = new Manufacturer("demo3", "demo3", "demo3", "demo3", "demo3");
+        Manufacturer manufacturer4 = new Manufacturer("demo4", "demo4", "demo4", "demo4", "demo4");
         
-        List<Product> lst = productService.findAll();
+        ManufacturerService service = new ManufacturerService();;
+        service.save(manufacturer1);
+        service.save(manufacturer2);
+        service.save(manufacturer3);
+        service.save(manufacturer4);
+
+//          Product product = new Product("Product", "Demo");
+//          Product product1 = new Product("Product1", "Demo1");
+//          Product product2 = new Product("Product2", "Demo2");
+//          Product product3 = new Product("Product3", "Demo3");
+//          ProductService productService = new ProductService();
+//          productService.save(product);
+//          productService.save(product1);
+//          productService.save(product2);
+//          productService.save(product3);
+        
+//        List<Product> lst = productService.findAll();
+        
+        List<Manufacturer> lst = service.findAll();
+        
+        Manufacturer manufacturer = new Manufacturer();
+        manufacturer = service.findById(manufacturer, 1);
+        manufacturer.getManId();
+        
         
         out.println("<html><body>");
         out.println("<h1>" + lst + "</h1>");

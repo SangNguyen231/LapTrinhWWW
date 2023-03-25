@@ -8,14 +8,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import jakarta.persistence.JoinColumn;
 
 @Entity
 @Table(name = "Product")
 public class Product implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long productId;
@@ -23,11 +28,28 @@ public class Product implements Serializable {
 	private String productName;
 	@Column(nullable = false, unique = true, length = 150)
 	private String description;
-
-	public Product( String productName, String description) {
+	@ManyToOne
+    @JoinColumn(name="cart_id", nullable=false)
+    private Manufacturer manufactuer;
+	
+	
+	
+	public Product(String productName, String description, Manufacturer manufactuer) {
+		super();
 		this.productName = productName;
 		this.description = description;
+		this.manufactuer = manufactuer;
 	}
+
+	public Manufacturer getManufactuer() {
+		return manufactuer;
+	}
+
+	public void setManufactuer(Manufacturer manufactuer) {
+		this.manufactuer = manufactuer;
+	}
+
+
 
 	public Product() {
 		super();
