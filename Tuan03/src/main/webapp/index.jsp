@@ -10,5 +10,6 @@
 <a href="hello-servlet">Kick me</a>
 <br/>
 <a href="controller?action=list_products">Product List</a>
+<a href="manufacture?action=list-manufactures">Manufacture list</a>
 </body>
 </html>
